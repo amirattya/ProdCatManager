@@ -16,6 +16,7 @@ builder.Services.AddScoped<IProductsService, ProductsService>();
 
 builder.Services.AddScoped<ICategoriesRepository, CategoriesRepository>();
 builder.Services.AddScoped<ICategoriesService, CategoriesService>();
+builder.Services.AddScoped<IDashboardService, DashboardService>();
 builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
@@ -39,5 +40,8 @@ app.MapCategoriesEndpoints();
 
 // Products Endpoints
 app.MapProductsEndpoints();
+
+// Dashboard Endpoints
+app.MapDashboardEndpoints();
 
 app.Run();
